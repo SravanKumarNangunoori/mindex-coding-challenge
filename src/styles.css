@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+.primary-text-color{
+    color: indigo;
+  }
+
+app-employee{
+    width:100%;
+    padding: 10px;
+    margin:0px;
+}
+md-grid-list {
+  height: 300px;
+}
+
+md-grid-tile {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.37);
+}

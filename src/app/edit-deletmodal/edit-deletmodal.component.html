@@ -1,0 +1,51 @@
+
+
+<div *ngIf="!data.action">
+<mat-card >
+  <mat-card-header>
+    <mat-card-title><h3> Delete Employee</h3></mat-card-title>
+    <mat-card-subtitle style="margin-top: 20px;">Permanently Delete Employee <span class="primary-text-color"> {{data.emp.firstName}}{{data.emp.lastName}}</span></mat-card-subtitle>
+  </mat-card-header>
+ <mat-card-content>
+    <p style="margin-top:20px; ">
+     This cannot be undone.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <div mat-dialog-actions>
+      <button mat-button (click)="deleteEmployee(data.emp)">OK</button>
+      <button mat-button (click)="closeModal()">cancel</button>
+    </div>
+  </mat-card-actions>
+</mat-card>
+</div>
+<div *ngIf="data.action">
+<mat-card >
+ <mat-card-content>
+   
+    <p style="margin-top:20px; ">First Name</p>
+    <p style="margin-left:20p;color:indigo">{{data.emp.firstName}}</p>
+    <mat-divider></mat-divider>
+    <p style="margin-top:20px; ">Last Name</p>
+    <p style="margin-left:20p;color:indigo">{{data.emp.lastName}}</p>
+    <mat-divider></mat-divider>
+    <p style="margin-top:20px; ">Position</p>
+    <p style="margin-left:20p;color:indigo">{{data.emp.position}}</p>
+    <mat-divider></mat-divider>
+    <p style="margin-top:20px; ">Compensation</p>
+    <mat-form-field>
+      <input style="color:indigo" matInput type="number" [(ngModel)]="data.emp.compensation">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+  <mat-card-actions>
+    <div mat-dialog-actions>
+      <button mat-button (click)="updateEmployee(data.emp)">OK</button>
+      <button mat-button  style="margin-left:20p;color:indigo" (click)="closeModal()">Cancel</button>
+    </div>
+  </mat-card-actions>
+</mat-card>
+</div>
+
+
+
